@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background: #f8f4ef;
+  background:#fcfaf8;
   direction: rtl;
   text-align: right;
   color: #222;
@@ -215,21 +215,49 @@ nav a:hover {
   font-size: 40px;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+.projects{
+    padding:100px;
+    text-align:center;
 }
 
-.gallery img {
-  width: 100%;
-  border-radius: 12px;
-  transition: 0.3s;
+.projects h2{
+    margin-bottom:40px;
+    color:#7d1c21;
+    font-size:38px;
 }
 
-.gallery img:hover {
-  transform: scale(1.02);
+.projects-slider{
+    display:flex;
+    gap:20px;
+
+    overflow-x:auto;
+
+    padding:20px;
+
+    scroll-snap-type:x mandatory;
+
+    scrollbar-width:thin;
 }
+
+.projects-slider img{
+    width:350px;
+    height:250px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    flex-shrink:0;
+
+    scroll-snap-align:center;
+
+    transition:0.3s;
+}
+
+.projects-slider img:hover{
+    transform:scale(1.03);
+}
+
 
 /* CONTACT */
 
@@ -257,6 +285,27 @@ nav a:hover {
   margin: 20px 0;
   font-size: 19px;
 }
+.whatsapp{
+    position:fixed;
+
+    bottom:25px;
+
+    left:25px;
+
+    background:#25D366;
+
+    color:white;
+
+    padding:14px 20px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    z-index:9999;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.2);
+}
 .location{
     margin-top:30px;
     text-align:center;
@@ -277,11 +326,18 @@ nav a:hover {
 }
 /* FOOTER */
 
-footer {
-  background: #5e0f12;
-  color: white;
-  text-align: center;
-  padding: 20px;
+footer{
+  background:#5e0f12;
+
+  color:white;
+
+  text-align:center;
+
+  padding:30px;
+
+  font-size:17px;
+
+  letter-spacing:.5px;
 }
 
 @media(max-width:768px){
@@ -353,9 +409,11 @@ footer {
         grid-template-columns:1fr;
     }
 
-    .gallery{
-        grid-template-columns:1fr;
+        .projects-slider img{
+        width:250px;
+        height:180px;
     }
+
 
     .contact{
         padding:30px;
